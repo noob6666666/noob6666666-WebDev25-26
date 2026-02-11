@@ -3,6 +3,30 @@
        2) Display BMI status as per the chart in index.html
        3) Display the corresponding image based on the BMI status.
 */
+function BMI(){
+       let H = parseFloat(document.getElementById("H").value);
+       let W = parseFloat(document.getElementById("W").value);
+       let output=document.getElementById("output");
+       let bmi=703*W/(H**2);
+       let message=""
+       let pics=""
+       
+       if (bmi >= 30){
+              message = "Obesity";
+              pics= "obeseweight.png";
+       } else if (bmi >= 25){
+              message = "Overweight";
+              pics= "overweight.png";
+       } else if (bmi >= 18.5){
+              message = "Healthy Weight";
+              pics= "healthyweight.png";
+       } else{
+              message = "Underweight";
+              pics= "underweight.png";
+       }
+       output.innerHTML=`Your BMI is ${bmi} and your Status is: ${message}<img src="${pics}">`;
+}
+
 /* 
 Guideline:
 1) Create the function
