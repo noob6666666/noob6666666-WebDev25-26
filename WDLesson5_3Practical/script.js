@@ -11,8 +11,26 @@
 */
 
 function balance(){
-
-
+        let p = parseFloat(document.getElementById("p").value)
+        let r = parseFloat(document.getElementById("r").value)
+        let t = parseFloat(document.getElementById("t").value)
+        let output = document.getElementById("output");
+        let rv2 = r/100 ;
+        let build = "" ;
+        build +=`<table>
+                <tr>
+                <Th>year</Th>
+                <Th>balance</Th>
+                </tr>`
+                for(let i=0; i<=t; i++){
+                        let A = p * (1 + rv2) ** i;
+                        build +=`<tr>
+                                        <td>${i}</td>
+                                        <td>$${A.toFixed(2)}</td>
+                                </tr>`
+                }
+        build +=`</table>`;
+        output.innerHTML=build;
 }
 
 /* Challenge Bonus: Allow the user to enter n.  This will require you to modify,
@@ -21,6 +39,6 @@ function balance(){
         3) Adjust the heading reflect the compound length.  Below are some typical lengths
               a. n = 1 then the interest is compounded yearly
               b. n = 12 then the interest is compounded monthly
-              c. n = 3 then the interest is compounded quarterly
+              c. n = 4 then the interest is compounded quarterly
               d. n = 2 then the interest is compounded bi-yearly
 */ 

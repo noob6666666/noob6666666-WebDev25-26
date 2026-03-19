@@ -28,7 +28,7 @@ function init(){
                <img class="pizza" src="images/pizza${i}.jpg">
                $${price}<input type="text" placeholder="Enter amount">
                <input type="button" value="BUY">
-            </div>`;
+            </div>`; 
       output.innerHTML=build;
   }
   
